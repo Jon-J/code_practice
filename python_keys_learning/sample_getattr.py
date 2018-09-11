@@ -1,3 +1,5 @@
+#https://blog.rmotr.com/python-magic-methods-and-getattr-75cf896b3f88
+
 class Dummy(object):
     def __getattr__(self, attr):
         return attr.upper()
