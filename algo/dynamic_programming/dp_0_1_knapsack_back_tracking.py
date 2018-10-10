@@ -1,7 +1,14 @@
-
 # Python3 code for Dynamic Programming 
 # based solution for 0-1 Knapsack problem 
-  
+#
+#Solution:
+#if(w < wt[i])
+#  T[i][w] = T[i-1][w]
+#else
+#  T[i][w] = max(T[i-1][w-wt[i]], T[i][w-1])
+#
+#
+#
 # Prints the items which are put in a  
 # knapsack of capacity W 
 def printknapSack(W, wt, val, n): 
