@@ -122,45 +122,45 @@ class BinarySearchTree:
     def __delitem__(self,key):
        self.delete(key)
 
-    def spliceOut(self):
-       if self.isLeaf():
-           if self.isLeftChild():
-                  self.parent.leftChild = None
-           else:
-                  self.parent.rightChild = None
-       elif self.hasAnyChildren():
-           if self.hasLeftChild():
-                  if self.isLeftChild():
-                     self.parent.leftChild = self.leftChild
-                  else:
-                     self.parent.rightChild = self.leftChild
-                  self.leftChild.parent = self.parent
-           else:
-                  if self.isLeftChild():
-                     self.parent.leftChild = self.rightChild
-                  else:
-                     self.parent.rightChild = self.rightChild
-                  self.rightChild.parent = self.parent
+#   def spliceOut(self): #this code need to be under TreeNode class.
+#      if self.isLeaf():
+#          if self.isLeftChild():
+#                 self.parent.leftChild = None
+#          else:
+#                 self.parent.rightChild = None
+#      elif self.hasAnyChildren():
+#          if self.hasLeftChild():
+#                 if self.isLeftChild():
+#                    self.parent.leftChild = self.leftChild
+#                 else:
+#                    self.parent.rightChild = self.leftChild
+#                 self.leftChild.parent = self.parent
+#          else:
+#                 if self.isLeftChild():
+#                    self.parent.leftChild = self.rightChild
+#                 else:
+#                    self.parent.rightChild = self.rightChild
+#                 self.rightChild.parent = self.parent
 
-    def findSuccessor(self):
-      succ = None
-      if self.hasRightChild():
-          succ = self.rightChild.findMin()
-      else:
-          if self.parent:
-                 if self.isLeftChild():
-                     succ = self.parent
-                 else:
-                     self.parent.rightChild = None
-                     succ = self.parent.findSuccessor()
-                     self.parent.rightChild = self
-      return succ
+#   def findSuccessor(self):#this code need to be under TreeNode class.
+#     succ = None
+#     if self.hasRightChild():
+#         succ = self.rightChild.findMin()
+#     else:
+#         if self.parent:
+#                if self.isLeftChild():
+#                    succ = self.parent
+#                else:
+#                    self.parent.rightChild = None
+#                    succ = self.parent.findSuccessor()
+#                    self.parent.rightChild = self
+#     return succ
 
-    def findMin(self):
-      current = self
-      while current.hasLeftChild():
-          current = current.leftChild
-      return current
+#   def findMin(self):#this code need to be under TreeNode class.
+#     current = self
+#     while current.hasLeftChild():
+#         current = current.leftChild
+#     return current
 
     def remove(self,currentNode):
          if currentNode.isLeaf(): #leaf
@@ -169,10 +169,21 @@ class BinarySearchTree:
            else:
                currentNode.parent.rightChild = None
          elif currentNode.hasBothChildren(): #interior
-           succ = currentNode.findSuccessor()
-           succ.spliceOut()
-           currentNode.key = succ.key
-           currentNode.payload = succ.payload
+           #If node as both children.
+           parent = currentNode
+           successor = currentNode.rightChild
+           while successor.hasLeftChild():
+               parent = successor
+               successor = successor.leftChild
+           
+           currentNode.key = successor.key
+           currentNode.payload = successor.payload
+           if parent.leftChild == successor:
+               parent.leftChild = successor.rightChild
+               successor.rightChild.parent = parent
+           else:
+               parent.rightChild = successor.rightChild
+               successor.rightChild.parent = parent
 
          else: # this node has one child
            if currentNode.hasLeftChild():
