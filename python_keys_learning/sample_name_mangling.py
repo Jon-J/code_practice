@@ -17,3 +17,4 @@ print(t2.foo)
 print(t2._bar)
 print(t2._ExtendedTest__baz)
 print(t2._Test__baz) # Variable '_Test_baz' is a private variable of class Test().
+print(t2.__dict__)
