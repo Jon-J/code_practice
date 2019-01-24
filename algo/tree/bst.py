@@ -175,7 +175,7 @@ class BinarySearchTree:
            while successor.hasLeftChild():
                parent = successor
                successor = successor.leftChild
-           
+
            currentNode.key = successor.key
            currentNode.payload = successor.payload
            if parent.leftChild == successor:
