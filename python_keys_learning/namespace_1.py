@@ -11,14 +11,14 @@ def outer():
        inner()
        print("outer after:", a_var)
 outer()
-
 def outer_2():
        a_var = 'local value'
        print('outer_2 before:', a_var)
        def inner():
-           nonlocal a_var
+           #nonlocal a_var
            a_var = 'inner value'
            print('in inner():', a_var)
        inner()
        print("outer_2 after:", a_var)
 outer_2()
+print(a_var)
