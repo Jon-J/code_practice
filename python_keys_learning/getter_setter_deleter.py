@@ -1,3 +1,4 @@
+#https://micropyramid.com/blog/programming-with-python-descriptors/
 class Person(object):
   def __init__(self):
     self._name = ';'
