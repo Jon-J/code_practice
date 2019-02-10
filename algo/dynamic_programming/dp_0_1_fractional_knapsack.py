@@ -15,6 +15,7 @@ def fractional_knapsack(value, weight, capacity):
     index = list(range(len(value)))
     # contains ratios of values to weight
     ratio = [v/w for v, w in zip(value, weight)]
+    print(ratio)
     # index is sorted according to value-to-weight ratio in decreasing order
     index.sort(key=lambda i: ratio[i], reverse=True)
  
