@@ -14,13 +14,15 @@ def traverse(rootnode):
     node = que.popleft()
     if node == "Next":
       print(x)
-      if not que:
+      if que:
         que.append("Next")
+        x = ""
       continue
     x = x+" "+str(node.value)
-    print("test ", node.value)
-    if node.left: que.append(node.left)
-    if node.right: que.append(node.right)
+    if node.left:
+      que.append(node.left)
+    if node.right:
+      que.append(node.right)
 
 t = Node(1, Node(2, Node(4, Node(7))), Node(3, Node(5), Node(6)))
 
