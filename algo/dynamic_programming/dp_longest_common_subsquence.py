@@ -25,7 +25,7 @@ def lcs(X, Y, m, n):
                 L[i][j] = L[i-1][j-1] + 1
             else: 
                 L[i][j] = max(L[i-1][j], L[i][j-1]) 
-  
+    print(L)  
     # Following code is used to print LCS 
     index = L[m][n] 
   
@@ -38,7 +38,7 @@ def lcs(X, Y, m, n):
     i = m 
     j = n 
     while i > 0 and j > 0: 
-  
+
         # If current character in X[] and Y are same, then 
         # current character is part of LCS 
         if X[i-1] == Y[j-1]: 
@@ -46,21 +46,21 @@ def lcs(X, Y, m, n):
             i-=1
             j-=1
             index-=1
-  
+
         # If not same, then find the larger of two and 
         # go in the direction of larger value 
         elif L[i-1][j] > L[i][j-1]: 
             i-=1
         else: 
             j-=1
-  
+
     print("LCS of " + X + " and " + Y + " is " + "".join(lcs))
-  
+
 # Driver program 
 Y = "AGGTAB"
 X = "GXTXAYB"
 m = len(X) 
 n = len(Y) 
 lcs(X, Y, m, n) 
-  
+
 # This code is contributed by BHAVYA JAIN
