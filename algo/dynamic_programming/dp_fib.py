@@ -8,7 +8,7 @@ def fib(n, lookup):
     return lookup[n]
 
 def main():
-    n = 50 
+    n = 6 
     lookup = [None] * (n+1)
     print(fib(n,lookup))
 
