@@ -8,13 +8,12 @@ def singleton(class_):
         return instances[class_]
     return getinstance
 
-class BaseClass:
-    pass
 @singleton
-class MyClass(BaseClass):
+class MyClass:
     pass
 
 obj1 = MyClass()
 obj2 = MyClass()
 print(id(obj2), id(obj1))
 print(obj1 is obj2)
+print(obj1 == obj2)
