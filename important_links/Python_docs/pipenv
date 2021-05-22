@@ -1,0 +1,7 @@
+https://realpython.com/pipenv-guide/
+# pip install pipenv
+# pipenv shell --python 3.7
+# pipenv install --index https://artifactory.oci.oraclecorp.com/api/pypi/global-release-pypi/simple oci
+# pipenv install --index https://artifactory.oci.oraclecorp.com/api/pypi/global-release-pypi/simple ansible
+# pipenv install --index https://artifactory.oci.oraclecorp.com/api/pypi/global-release-pypi/simple paramiko
+# ansible-galaxy install oracle.oci_ansible_modules

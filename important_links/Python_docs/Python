@@ -1,0 +1,11 @@
+good for intv Prepration
+https://www.youtube.com/watch?v=jl5yUEdekEM&t=31s
+
+https://realpython.com/python-testing/
+
+
+https://realpython.com/pipenv-guide/
+#pipenv shell
+#pip install -U --index https://artifactory.oci.oraclecorp.com/api/pypi/global-release-pypi/simple
+# pipenv install pytest --dev
+# pipenv lock
