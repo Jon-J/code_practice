@@ -9,3 +9,5 @@ https://realpython.com/pipenv-guide/
 #pip install -U --index https://artifactory.oci.oraclecorp.com/api/pypi/global-release-pypi/simple
 # pipenv install pytest --dev
 # pipenv lock
+
+https://www.toptal.com/python/top-10-mistakes-that-python-programmers-make
