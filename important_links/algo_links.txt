@@ -1,1 +1,2 @@
 https://github.com/gennad/Algorithms-in-Python
+http://blog.gainlo.co/index.php/category/coding-interview-questions/

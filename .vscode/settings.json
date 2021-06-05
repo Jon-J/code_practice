@@ -1,0 +1,6 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.pylintPath": "/Users/shbv/.local/share/virtualenvs/code_practice-7bZcvFip/bin/pylint"
+}

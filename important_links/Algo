@@ -1,0 +1,29 @@
+http://blog.gainlo.co/index.php/category/coding-interview-questions/
+
+Linked List:
+https://www.geeksforgeeks.org/find-first-node-of-loop-in-a-linked-list/
+
+Binary Tree
+https://www.geeksforgeeks.org/write-a-c-program-to-get-count-of-leaf-nodes-in-a-binary-tree/
+https://www.geeksforgeeks.org/find-level-maximum-sum-binary-tree/
+
+Array manipulation
+https://www.geeksforgeeks.org/maximize-number-0s-flipping-subarray/
+
+BST:
+Best explained Inorder, Preorder and Postorder - https://www.programiz.com/dsa/tree-traversal
+ https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
+ https://www.faceprep.in/data-structures/tree-traversals-inorder-preorder-and-postorder/
+
+Sorting:
+    Quick sort
+    https://www.youtube.com/watch?v=COk73cpQbFQ
+    https://www.youtube.com/watch?v=SLauY6PpjW4
+
+https://www.geeksforgeeks.org/majority-element/#:~:text=the%20array%20size.-,Input%20%3A%20%7B3%2C%203%2C%204%2C%202%2C%204,size%20of%20the%20array%20size.&text=If%20the%20maximum%20count%20doesn,the%20max%20count%2C%20count%20%3D%200
+https://medium.com/swlh/finding-the-majority-element-is-your-solution-efficient-enough-2a6b49a75cb8
+https://afteracademy.com/blog/find-the-majority-element-in-an-array
+
+Design get min stack:
+    https://www.geeksforgeeks.org/design-and-implement-special-stack-data-structure/
+    https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/

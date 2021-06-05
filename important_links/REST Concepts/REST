@@ -1,0 +1,12 @@
+Call back urls:
+https://stackoverflow.com/questions/23347056/what-is-a-callback-url-in-relation-to-an-api
+https://dzone.com/articles/rest-callbacks
+https://auth0.github.io/auth0-oidc-client-net/documentation/getting-started/callbacks.html#:~:text=Callback%20URLs%20are%20the%20URLs,an%20id_token%20%2C%20access_token%20and%20refresh_token%20.
+https://devdocs.magento.com/marketplace/eqp/v1/callbacks.html
+
+https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply   ******
+https://dev.to/ragrag/asynchronous-request-response-pattern-2pbj   *****
+https://medium.com/@pulkitswarup/microservices-asynchronous-request-response-pattern-6d00ab78abb6
+
+https://softwareengineering.stackexchange.com/questions/362795/how-to-handle-parallel-requests-different-response-time-and-atomicity-of-transa
+https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/async-operations

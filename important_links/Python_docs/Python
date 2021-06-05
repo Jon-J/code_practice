@@ -1,5 +1,12 @@
 good for intv Prepration
 https://www.youtube.com/watch?v=jl5yUEdekEM&t=31s
+https://realpython.com/tutorials/best-practices/ ------ ********** BEST practices along with interview tips
+https://realpython.com/python3-object-oriented-programming/ -- oops
+
+
+VSCODE Setup with pipenv:
+https://dev.to/idrisrampurawala/setting-up-python-workspace-in-visual-studio-code-vscode-149p - pylint,flake8
+https://www.youtube.com/watch?v=MgwgEiC1CqE
 
 https://realpython.com/python-testing/
 
@@ -11,3 +18,8 @@ https://realpython.com/pipenv-guide/
 # pipenv lock
 
 https://www.toptal.com/python/top-10-mistakes-that-python-programmers-make
+
+https://realpython.com/instance-class-and-static-methods-demystified/
+
+Automic operations performance
+https://julien.danjou.info/atomic-lock-free-counters-in-python/
