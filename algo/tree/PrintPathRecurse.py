@@ -72,4 +72,3 @@ root.left.right = Node(5)
 root.right.left = Node(2) 
 printPaths(root) 
   
-# This code has been contributed by Shweta Singh.
