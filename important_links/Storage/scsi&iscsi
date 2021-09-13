@@ -1,0 +1,42 @@
+https://www.hardwarecentral.com/scsi/
+https://computer.howstuffworks.com/scsi.htm
+https://cc.cnetcontent.com/vcs/seagate/inline-content/C5/214BEE500716915E0FF87ACA9B6E108093D31A6C_100293068H_source.PDF
+https://www.seagate.com/files/staticfiles/support/docs/manual/Interface%20manuals/100293068j.pdf
+
+https://01.org/linuxgraphics/gfx-docs/drm/driver-api/scsi.html **** Linux code api
+https://stackoverflow.com/questions/11867612/scsi-read-10-and-write-10-with-the-scsi-generic-interface
+https://github.com/hreinecke/sg3_utils/blob/master/examples/sg_simple16.c
+
+https://www.t10.org/scsi-3.htm
+https://docs.oracle.com/en/storage/tape-storage/storagetek-sl150-modular-tape-library/slorm/scsi-operation-and-configuration.html#GUID-E7BE7D46-05CE-44C4-92DA-1153A2BC92E4
+https://medium.com/opsops/decoding-scsi-cdb-69beef66cd19
+https://www.thegeekdiary.com/how-to-enable-additional-scsi-logging-in-centos-rhel/
+https://en-academic.com/dic.nsf/enwiki/496708
+
+https://medium.com/oracledevs/oracle-cluster-file-system-with-iscsi-on-bare-metal-cloud-services-8da5bfcdc6f9
+https://www.golinuxcloud.com/configure-iscsi-target-initiator-targetcli-rhel-centos-7/ *****
+https://xmlandmore.blogspot.com/2019/01/ociknowing-block-volume-service-basics.html ---- Oracle solution
+https://searchstorage.techtarget.com/definition/iSCSI ***** Important for iSCSI
+https://medium.com/oracledevs/managing-oracle-cloud-infrastructure-iscsi-block-volume-attachments-with-terraform-97726691b842
+https://askmedawaa.wordpress.com/2020/05/06/attaching-a-block-volume-in-oracle-cloud-infrastructure-aka-oci/
+
+http://mirrors.apple2.org.za/apple.cabi.net/Utilities/SCSI.STUFF/SCSI.TUTORIAL.txt --- Process of SCSI hand shake
+
+PARAvirtualized in Oracle:
+https://blogs.oracle.com/cloud-infrastructure/paravirtualized-block-volume-attachments-for-vms
+
+
+
+
+iSCSI Tgt and Initiator commands:
+https://oracle-base.com/articles/linux/linux-iscsi-targets-and-initiators
+https://docs.oracle.com/cd/E37670_01/E41138/html/ch17s07s01.html
+https://docs.oracle.com/cd/E37670_01/E41138/html/ch17s07s02.html
+
+https://support.citrix.com/article/CTX140118
+https://www.thegeekdiary.com/iscsi-connection-command-examples-cheat-sheet/
+
+https://medium.com/oracledevs/oracle-cluster-file-system-with-iscsi-on-bare-metal-cloud-services-8da5bfcdc6f9
+https://www.golinuxcloud.com/configure-iscsi-target-initiator-targetcli-rhel-centos-7/ **** target cli
+https://www.tecmint.com/setup-iscsi-target-and-initiator-on-debian-9/
+https://wiki.archlinux.org/title/LVM_on_software_RAID

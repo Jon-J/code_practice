@@ -12,3 +12,20 @@ https://avinetworks.com/what-is-load-balancing/ *******
 https://www.imperva.com/learn/availability/load-balancing-algorithms/
 https://blog.logrocket.com/7-ways-to-improve-node-js-performance-at-scale/
 https://www.cloudflare.com/en-gb/learning/performance/types-of-load-balancing-algorithms/
+
+
+Proxy:
+https://www.imperva.com/learn/performance/reverse-proxy/
+https://www.jscape.com/blog/bid/87783/forward-proxy-vs-reverse-proxy
+https://www.cloudflare.com/en-gb/learning/cdn/glossary/reverse-proxy/
+https://www.linuxbabe.com/it-knowledge/differences-between-forward-proxy-and-reverse-proxy
+
+
+API Gateway:
+https://www.redhat.com/en/topics/api/what-does-an-api-gateway-do#:~:text=An%20API%20gateway%20is%20an,and%20return%20the%20appropriate%20result.
+https://netflixtechblog.com/optimizing-the-netflix-api-5c9ac715cf19
+https://microservices.io/patterns/apigateway.html
+
+
+API management:
+https://www.redhat.com/en/topics/api/what-is-api-management

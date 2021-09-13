@@ -1,9 +1,42 @@
 SOLID Principles
 https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
 https://www.baeldung.com/solid-principles
-https://stackify.com/solid-design-principles/
+https://stackify.com/solid-design-principles/  ****** Good Content
 https://www.youtube.com/watch?v=rtmFCcjEgEw
+https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898 *** easy
+https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
+
+important SOLID links
+https://www.baeldung.com/java-liskov-substitution-principle ****** Liskov Substitution
+https://www.baeldung.com/java-interface-segregation
+https://dev.to/huzaifa99/is-it-practical-to-use-interface-segregation-principle-3ojl
 
 
 https://realpython.com/tutorials/best-practices/
 https://stackify.com/oops-concepts-in-java/
+
+DI dependency injection:
+https://stackify.com/dependency-injection/
+https://www.freecodecamp.org/news/a-quick-intro-to-dependency-injection-what-it-is-and-when-to-use-it-7578c84fa88f/
+https://www.tutorialsteacher.com/ioc/dependency-injection
+https://dev.to/sxddhxrthx/introduction-to-dependency-injection-in-python-35c
+https://levelup.gitconnected.com/dependency-injection-in-python-3-with-testing-55b64ca60ae1
+
+https://martinfowler.com/articles/injection.html
+https://www.codementor.io/@olotintemitope/dependency-injection-explained-in-plain-english-b24hippx7
+https://www.smashingmagazine.com/2020/12/practical-introduction-dependency-injection/
+https://medium.com/@ilyailin7777/dependency-injection-keep-it-easy-3d0152b691e1
+
+Composition:
+https://refactoring.guru/design-patterns/composite
+https://sourcemaking.com/design_patterns/composite
+https://stackify.com/oops-concepts-in-java/
+https://realpython.com/inheritance-composition-python/#whats-composition
+https://www.geeksforgeeks.org/composite-method-python-design-patterns/
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/ *******
+https://medium.com/swlh/aggregation-vs-composition-in-object-oriented-programming-3fa4fd471a9f  **********
+
+
+OOps
+https://www.fusion-reactor.com/blog/technical-blogs/inheritance-abstract-class-and-interface-in-java/
+https://www.javatpoint.com/abstract-class-in-java

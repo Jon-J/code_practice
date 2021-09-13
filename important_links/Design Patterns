@@ -1,3 +1,12 @@
 https://refactoring.guru/design-patterns/composite/python/example#:~:text=Composite%20is%20a%20structural%20design,it%20was%20a%20singular%20object.&text=Composite's%20great%20feature%20is%20the,and%20sum%20up%20the%20results.
 https://sourcemaking.com/design_patterns/composite/python/1
 https://github.com/gennad/Design-Patterns-in-Python
+
+DI dependency injection:
+https://stackify.com/dependency-injection/
+https://www.freecodecamp.org/news/a-quick-intro-to-dependency-injection-what-it-is-and-when-to-use-it-7578c84fa88f/ ********
+https://stackoverflow.com/questions/130794/what-is-dependency-injection
+https://martinfowler.com/articles/injection.html
+https://blog.drewolson.org/dependency-injection-in-go
+https://banzaicloud.com/blog/dependency-injection-go/
+
