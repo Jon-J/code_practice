@@ -1,0 +1,94 @@
+
+
+Setting Mac for Dev
+
+
+Default: http://wpad/wpad.dat
+
+
+$ docker run  -v ~/sid_ws:/ajiv/ajiv_cache ajiv:1.1
+docker build --tag ajiv:1.2 .
+
+
+https://stackoverflow.com/questions/38820979/docker-image-error-downloading-package/47237962
+$ docker rm $(docker ps -qa)
+
+
+Docker
+
+https://www.educative.io/edpresso/what-is-the-workdir-command-in-docker
+https://docs.docker.com/engine/reference/commandline/cli/
+https://djangostars.com/blog/what-is-docker-and-how-to-use-it-with-python/
+https://www.joyfulbikeshedding.com/blog/2019-08-27-debugging-docker-builds.html
+https://stackoverflow.com/questions/26504846/copy-directory-to-other-directory-at-docker-using-add-command
+
+https://dzone.com/articles/overriding-docker-entrypoint-of-a-base-image —— entry point override
+
+
+Ladp:
+https://www.python-ldap.org/en/python-ldap-3.2.0/installing.html#debian
+
+
+Commands:
+# docker rm $(docker ps -a -f status=exited -q) ——— remove unused or dangling containers.
+#docker images -f "dangling=true" -q.  ——— list all dangling images which doesn’t have tag
+#docker rmi $(docker images -f "dangling=true" -q)   ————— remove dangling images
+#docker build --tag ajiv:1.2 .
+
+#docker run --rm -ti  --name test11 a5789495a3ab
+
+#docker run -d --name test10 a5789495a3ab
+
+#docker exec -it c24e /bin/bash
+
+yum install -y gcc openssl-devel bzip2-devel libffi-devel make yum-utils; curl -o Python-3.7.1.tgz
+
+ https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz
+
+
+
+ Commands:
+ # docker rm $(docker ps -a -f status=exited -q) ——— remove unused or dangling containers.
+ #docker images -f "dangling=true" -q.  ——— list all dangling images which doesn’t have tag
+ #docker rmi $(docker images -f "dangling=true" -q)   ————— remove dangling images
+ #docker build --tag ajiv:1.2 .
+
+ #docker run --rm -ti  --name test11 a5789495a3ab
+
+ #docker run -d --name test10 a5789495a3ab
+
+ #docker exec -it c24e /bin/bash
+
+ yum install -y gcc openssl-devel bzip2-devel libffi-devel make yum-utils; curl -o Python-3.7.1.tgz
+
+  https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz
+
+
+
+vader 0.0.1 requires httpsig, which is not installed.
+vader 0.0.1 requires ipdb, which is not installed.
+vader 0.0.1 requires jira, which is not installed.
+vader 0.0.1 requires loguru, which is not installed.
+vader 0.0.1 requires parallel-ssh, which is not installed.
+vader 0.0.1 requires pycryptodome, which is not installed.
+vader 0.0.1 requires python-ldap, which is not installed.
+tenacity 6.2.0 requires six>=1.9.0, which is not installed.
+retrying 1.3.3 requires six>=1.7.0, which is not installed.
+requests 2.23.0 requires certifi>=2017.4.17, which is not installed.
+requests 2.23.0 requires chardet<4,>=3.0.2, which is not installed.
+requests 2.23.0 requires idna<3,>=2.5, which is not installed.
+
+
+####pip3.7 install ipdb jira loguru
+
+pytz',
+
+ 28     'requests',
+
+ 29     'retrying',
+
+ 30     'tenacity',
+
+ 31     'urllib3',
+
+pip3.7 install parallel-ssh pycryptodome pytz requests retrying urllib3  tenacity
