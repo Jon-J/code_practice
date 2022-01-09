@@ -31,4 +31,64 @@ Design get min stack:
 Get Major Elemnts:
     https://blogarithms.github.io/articles/2017-11/majority-element-and-moores-algorithm
     https://www.techiedelight.com/find-majority-element-in-an-array-boyer-moore-majority-vote-algorithm/
-    
+
+    https://www.studytonight.com/post/finding-next-greater-element-for-every-element-in-an-array
+    https://www.geeksforgeeks.org/next-greater-element/
+
+    https://www.geeksforgeeks.org/find-zeroes-to-be-flipped-so-that-number-of-consecutive-1s-is-maximized/
+
+    https://runestone.academy/runestone/books/published/pythonds/Trees/BinaryHeapImplementation.html
+
+    https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
+
+    https://www.geeksforgeeks.org/find-given-string-can-represented-substring-iterating-substring-n-times/
+
+    https://brilliant.org/wiki/amortized-analysis/
+
+    http://pidanic.com/en/hackerrank/  **********
+
+    Palindrome:
+    	https://www.youtube.com/watch?v=1aKjQ6Tvh2w
+
+    Sliding Window:
+    	https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66 ****
+
+    PAttern Matching / KMP:
+    	https://www.codespeedy.com/kmp-string-matching-algorithm-in-python/
+    	https://stackoverflow.com/questions/37840651/kmp-algorithm-with-python
+    	https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/
+
+    Graphs:
+    	https://discuss.codechef.com/t/graph-algorithms-in-competitive-programming/6775
+
+    Dutch Flag problem:
+    	https://coderbyte.com/algorithm/dutch-national-flag-sorting-problem
+    	http://users.monash.edu/~lloyd/tildeAlgDS/Sort/Flag/
+
+    CLRS soln:
+    	https://walkccc.github.io/CLRS/Chap06/6.1/
+
+    heap:
+    	https://algorithms.tutorialhorizon.com/binary-min-max-heap/
+    	https://medium.com/@kumaraswanth/learning-heaps-with-python-2a8b8cc734f8 ***
+    	https://github.com/careermonk/DataStructureAndAlgorithmicThinkingWithPython/blob/master/src/chapter07priorityqueues/KthSmallestWithExtraHeap.py
+    	https://stackoverflow.com/questions/52821173/how-to-merge-k-number-of-sorted-lists
+    	https://brilliant.org/wiki/fibonacci-heap/
+
+    Prim's MST:
+    	https://medium.com/@mmekutmfonedet/prims-algorithm-6bdf3adfb559
+    	https://bradfieldcs.com/algos/graphs/prims-spanning-tree-algorithm/
+    	https://www.geeksforgeeks.org/prims-mst-for-adjacency-list-representation-greedy-algo-6/   ****
+    	https://algorithms.tutorialhorizon.com/prims-minimum-spanning-tree-mst-using-adjacency-list-and-priority-queue-with-decrease-key/
+    	https://runestone.academy/runestone/books/published/pythonds/Graphs/PrimsSpanningTreeAlgorithm.html
+    	https://coderbyte.com/algorithm/find-minimum-spanning-tree-using-prims-algorithm
+    	https://www.bogotobogo.com/python/python_Prims_Spanning_Tree_Data_Structure.php
+    	https://medium.com/@mmekutmfonedet/prims-algorithm-6bdf3adfb559
+
+    Dijkstar Algo:
+    	https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e
+
+    Stacks:
+    	https://coderbyte.com/algorithm/implement-queue-using-two-stacks
+    	https://algorithmsandme.com/stacks-stock-span-problem/
+    	https://medium.com/@dimko1/largest-rectangle-in-histogram-bbd7c1e1158

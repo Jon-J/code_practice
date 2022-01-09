@@ -1,0 +1,396 @@
+> use TestDB /// this will create TestDB database
+> db  /// this will list database
+> show dbs
+admin     0.000GB
+config    0.000GB
+hospital  0.000GB
+local     0.000GB
+sid       0.000GB
+> use hospital
+switched to db hospital
+> show collections
+hospital
+user
+> db.hospital.find()
+{ "_id" : ObjectId("5cf3d61ca009a555934f840e"), "name" : "myhosp1" }
+> db.user.find()
+
+#https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e
+sudo -u postgres psql
+postgres=# create database mydb;
+postgres=# create user sid with encrypted password 'test';
+postgres=# grant all privileges on database mydb to sid;
+\connect mydb or \c mydb
+\l --- list all databases
+\d --- list all tables
+\d philatelist_coin
+
+#create an account table :
+CREATE TABLE account(
+   user_id serial PRIMARY KEY,
+   username VARCHAR (50) UNIQUE NOT NULL,
+   password VARCHAR (50) NOT NULL,
+   email VARCHAR (355) UNIQUE NOT NULL,
+   created_on TIMESTAMP NOT NULL,
+   last_login TIMESTAMP
+);
+
+#create a role table:
+#http://www.postgresqltutorial.com/postgresql-create-table/
+CREATE TABLE role(
+   role_id serial PRIMARY KEY,
+   role_name VARCHAR (255) UNIQUE NOT NULL
+);
+
+#Create account and role table with foreign-key:
+CREATE TABLE account_role
+(
+  user_id integer NOT NULL,
+  role_id integer NOT NULL,
+  grant_date timestamp without time zone,
+  PRIMARY KEY (user_id, role_id),
+  CONSTRAINT account_role_role_id_fkey FOREIGN KEY (role_id)
+      REFERENCES role (role_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT account_role_user_id_fkey FOREIGN KEY (user_id)
+      REFERENCES account (user_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+# SELECT * FROM philatelist_coinsgroups;
+
+
+********************##### Example for altering table columns***************************:
+#create table:
+CREATE TABLE customers (
+   id SERIAL PRIMARY KEY,
+   customer_name VARCHAR NOT NULL
+);
+
+# Adding one column to existing table:
+ALTER TABLE customers ADD COLUMN phone VARCHAR;
+
+# Adding more than one column to a table:
+ALTER TABLE customers 
+ ADD COLUMN fax VARCHAR,
+ ADD COLUMN email VARCHAR;
+
+### TODO: Following command will fail This is because the contact_name column has the NOT NULL constraint. When PostgreSQL added the column, this new column takes the NULL value, which violates the NOT NULL constraint.
+
+ALTER TABLE customers 
+	ADD COLUMN contact_name VARCHAR NOT NULL;
+	
+	###output--- ERROR:  column "contact_name" contains null values
+## To solve above problem first add column without "NOT NULL" constraint. And update all columns with some value to this column and later update the column with values
+ALTER TABLE customers 
+	ADD COLUMN contact_name VARCHAR;
+
+## Update columns for contact_name for existing records
+UPDATE customers
+SET contact_name = 'John Doe'
+WHERE
+   ID = 1;
+ 
+UPDATE customers
+SET contact_name = 'Mary Doe'
+WHERE
+   ID = 2;
+ 
+UPDATE customers
+SET contact_name = 'Lily Bush'
+WHERE
+   ID = 3;
+   
+## Now update column constraint or property to "NOT NULL"
+ALTER TABLE customers
+ALTER COLUMN contact_name SET NOT NULL;
+
+## DELETE COLUMN
+ALTER TABLE customers DROP COLUMN contact_name;
+
+### Alternate approach for adding column with NOT NULL constraint is add column with default values
+ALTER TABLE customers
+	ADD COLUMN contact_name VARCHAR NOT NULL DEFAULT 'foo';
+### Now manually update exiting records for contact_name columns then later remove default value
+ALTER TABLE customers 
+	ALTER COLUMN contact_name 
+	DROP DEFAULT;
+
+**************************** Drop column **************************
+## Firstly creating 3 tables with foregin key
+CREATE TABLE publishers (
+    publisher_id serial PRIMARY KEY,
+    name VARCHAR NOT NULL
+);
+ 
+CREATE TABLE categories (
+    category_id serial PRIMARY KEY,
+    name VARCHAR NOT NULL
+);
+ 
+CREATE TABLE books (
+    book_id serial PRIMARY KEY,
+    title VARCHAR NOT NULL,
+    isbn VARCHAR NOT NULL,
+    published_date DATE NOT NULL,
+    description VARCHAR,
+    category_id INT NOT NULL,
+    publisher_id INT NOT NULL,
+    FOREIGN KEY (publisher_id) REFERENCES publishers (publisher_id),
+    FOREIGN KEY (category_id) REFERENCES categories (category_id)
+);
+
+###Now create a view with publisher_id as view:
+CREATE VIEW book_info AS SELECT
+    book_id,
+    title,
+    isbn,
+    published_date,
+    name
+FROM
+    books b
+INNER JOIN publishers P ON P .publisher_id = b.publisher_id
+ORDER BY
+    title;
+
+### To check records from view 
+select * from book_info;
+
+### Drop column
+ALTER TABLE books DROP COLUMN category_id;
+
+## Now delete or drop column which is foreign-key for a view
+ALTER TABLE books DROP COLUMN publisher_id;
+
+## Through following error ERROR:  cannot drop table books column publisher_id because other objects depend on it
+#DETAIL:  view book_info depends on table books column publisher_id
+#HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+
+### To resolve above issue we need to do cascade.... This will remove even views not in case actual table
+ALTER TABLE books DROP COLUMN publisher_id CASCADE;
+
+***** INSERT, UPDATE **********************************************************************
+INSERT INTO student VALUES (1, 'Jack', 'Biology');
+INSERT INTO student VALUES (2, 'KATE', 'Sociology') RETURNING student_id;  ### This will return with 'student_id'
+SELECT * FROM student;  ## this will print all records in the table.
+INSERT INTO student(student_id, name) VALUES (3, 'Claire') RETURNING student_id; ### this will add record into table with columns.
+
+UPDATE student SET major = 'bio' WHERE major = 'biology';
+UPDATE student SET major = 'biochemistry' WHERE major = 'biology' OR major = 'chemistry';
+UPDATE student SET major = 'biochemistry'; ### this will update major column with 'biochemistry' for all rows in the table;
+
+DELETE FROM student WHERE student_id = 5;
+DELETE FROM student WHERE name = 'sid' AND major = 'sociology';
+DELETE FROM student ; # This will delete all rows in the table
+
+
+****************** GENERATE random data ***************************
+####https://vnegrisolo.github.io/postgresql/generate-fake-data-using-sql
+INSERT INTO users(email)
+SELECT
+  'user_' || seq || '@' || (
+    CASE (RANDOM() * 2)::INT
+      WHEN 0 THEN 'gmail'
+      WHEN 1 THEN 'hotmail'
+      WHEN 2 THEN 'yahoo'
+    END
+  ) || '.com' AS email
+FROM GENERATE_SERIES(1, 10) seq;
+
+SELECT * FROM users;
+
+### Following inserting random rows for two columns.
+INSERT INTO student(name, major)
+SELECT
+  'user_' || seq  AS name,
+   (
+    CASE (RANDOM() * 2)::INT
+      WHEN 0 THEN 'Biology'
+      WHEN 1 THEN 'Sociology'
+      WHEN 2 THEN 'Chemistry'
+    END
+  ) AS major
+FROM GENERATE_SERIES(1, 10) seq;
+
+INSERT INTO student(name, major)
+SELECT
+  'yummy' || seq  AS name,
+   (
+    CASE (RANDOM() * 2)::INT
+      WHEN 0 THEN 'Biology'
+      WHEN 1 THEN 'Sociology'
+      WHEN 2 THEN 'Chemistry'
+    END
+  ) AS major
+FROM GENERATE_SERIES(1, 3) seq;
+******************* SELECT  ****************************************************************
+SELECT * FROM student; ### This will print table data.
+SELECT name, major as subject FROM student ORDER BY major; ### this will display only two columns data for the table and one of column name has changed for displaying 'subject'
+SELECT * FROM student ORDER BY major; #### this will print table data by ordering or sorting for specific column in asscending ordering
+SELECT * FROM student ORDER BY major DESC; #### this will print table data by ordering or sorting for specific column in decending ordering
+SELECT * FROM student ORDER BY major, student_id; ### this sort based on two column, but order will be first column and on top second column will be ordered.
+SELECT * FROM student ORDER BY major DESC, student_id DESC; ### Both column will start printing in descending order.
+
+SELECT * FROM student LIMIT 2; ### this will only get 2 first rows from the table
+SELECT * FROM student ORDER BY student_id DESC LIMIT 2; ### this will get first two rows from table in descending order
+
+SELECT * FROM student ORDER BY student_id OFFSET 0 ROW FETCH NEXT 2 ROW ONLY; #### this will get 2rows from 1st row as offset
+SELECT * FROM student ORDER BY student_id OFFSET 8 ROW FETCH NEXT 2 ROW ONLY; ### this will  get 2 rows from 8th row as offset
+
+SELECT * FROM student WHERE name LIKE 'dummy%' AND student_id BETWEEN 17 AND 18;  ### this will get the row where name start with pattern 'dummy' and also student_id range between 17 and 18
+
+SELECT * FROM student WHERE name LIKE 'dummy%' AND major = 'Biology'; ### this will get only rows which are name column starts with 'dummy' and major has 'Biology'
+SELECT * FROM student WHERE name LIKE 'dummy%' OR major = 'Biology'; ### this will get rows which are name column starts with 'dummy' or major has 'Biology'.
+
+SELECT * FROM student WHERE name LIKE 'dummy%' AND major <> 'Biology'; ### This will get rows which start with 'dummy' and does not have 'Biology' in major
+SELECT * FROM student WHERE name LIKE 'dummy%' AND major != 'Biology'; ### same as above
+
+SELECT * FROM student WHERE name LIKE 'dummy%' AND major IN ('Biology', 'Chemistry'); ### this will get rows which start with 'dummy' and major has ('Biology', 'Chemistry')
+
+******************* Create Company Database ****************************
+sudo -u postgres psql -d giraffe_practice -f company_db.sql ### 'giraffe_practice' database should be created already. and this command will create tables and records.
+ sudo -u postgres pg_dump giraffe_practice > test.sql ### Dump databases to test.sql file
+ 
+ CREATE TABLE employee(emp_id INT PRIMARY KEY, first_name VARCHAR(40), last_name VARCHAR(40), birth_day DATE, sex VARCHAR(1), salary INT, super_id INT, branch_id INT);
+ CREATE TABLE branch(branch_id INT PRIMARY KEY, branch_name VARCHAR(40), mgr_id INT, mgr_start_date DATE, FOREIGN KEY (mgr_id) REFERENCES employee(emp_id) ON DELETE SET NULL);
+ ALTER TABLE employee ADD FOREIGN KEY (super_id) REFERENCES employee(emp_id) ON DELETE SET NULL;
+ ALTER TABLE employee ADD FOREIGN KEY (branch_id) REFERENCES branch(branch_id) ON DELETE SET NULL;
+ 
+CREATE TABLE client(client_id INT PRIMARY KEY, client_name VARCHAR(40), branch_id INT, FOREIGN KEY (branch_id) REFERENCES branch(branch_id) ON DELETE SET NULL);
+CREATE TABLE works_with(emp_id INT, client_id INT, total_sales INT, PRIMARY KEY(emp_id, client_id), FOREIGN KEY(emp_id) REFERENCES employee(emp_id) ON DELETE SET NULL, FOREIGN KEY(client_id) REFERENCES client(client_id) ON DELETE SET NULL);
+CREATE TABLE branch_supplier(branch_id INT, supplier_name VARCHAR(40), supply_type VARCHAR(40), PRIMARY KEY(branch_id, supplier_name), FOREIGN KEY(branch_id) REFERENCES branch(branch_id) ON DELETE SET NULL);
+
+INSERT INTO employee VALUES(100, 'David', 'Wallace', '1967-11-17', 'M', 250000, NULL, NULL);
+INSERT INTO branch VALUES(1, 'Corporate', 100, '2006-02-09');
+UPDATE employee SET branch_id = 1 WHERE emp_id = 100;
+INSERT INTO employee VALUES(101, 'Jan', 'Levinson', '1961-05-11', 'F', 110000, 100, 1), 
+						   (102, 'Michael', 'Scott', '1964-06-15', 'M', 75000, 100, 2),
+						   (103, 'Angela', 'Martin', '1971-06-25', 'F', 63000, 102, 2),
+						   (104, 'Kelly', 'Kapoor', '1980-02-05', 'F', 55000, 102, 2),
+						   (105, 'Stanley', 'Hudson', '1958-02-19', 'M', 69000, 102, 2),
+						   (106, 'Josh', 'Porter', '1969-09-05', 'M', 78000, 100, 3),
+						   (107, 'Andy', 'Bernard', '1973-07-22', 'M', 65000, 106, 3),
+						   (108, 'Jim', 'Halpert', '1978-10-01', 'M', 71000, 106, 3);
+INSERT INTO branch_supplier VALUES (2, 'Hammer Mill', 'Paper'),
+								   (2, 'Uni-ball', 'Writing Utensils'),
+								    (3, 'Patriot Paper', 'Paper'),
+									(2, 'J.T. Forms & Labels', 'Custom Forms'),
+									(3, 'Uni-ball', 'Writing Utensils'),
+									(3, 'Hammer Mill', 'Paper'),
+									(3, 'Stamford Lables', 'Custom Forms');
+
+INSERT INTO client VALUES (400, 'Dunmore Highschool', 2),
+							(401, 'Lackawana Country', 2),
+							(402, 'FedEx', 3),
+							(403, 'John Daly Law, LLC', 3),
+							(404, 'Scranton Whitepages', 2),
+							(405, 'Times Newspaper', 3),
+							(406, 'FedEx', 2);
+							
+INSERT INTO works_with VALUES (105, 400, 55000),
+							(102, 401, 267000),
+							(108, 402, 22500),
+							(107, 403, 5000),
+							(108, 403, 12000),
+							(105, 404, 33000),
+							(107, 405, 26000),
+							(102, 406, 15000),
+							(105, 406, 130000);
+							
+*********************** more basic queries *************************************
+  ###### Find employee ordered by salary
+ SELECT * FROM employee ORDER BY salary; #### this will get employee list based on salary sorted order
+ SELECT * FROM employee ORDER BY salary DESC; ### this will get employee list based on salary sorted descending order
+ 
+ ###### Find all employee ordered by sex and then Name
+ SELECT * FROM employee ORDER BY sex, first_name, last_name;
+ 
+ #### Find first 5 employee
+ SELECT * FROM employee LIMIT 5;
+
+  ### Find all employee first_name and last_name rename label with forename and surname
+  SELECT first_name AS forename, last_name AS surname FROM employee;
+  
+  ### Find out all the different genders like ex:- there are only two types in the table just get those info
+  SELECT DISTINCT sex FROM employee;  ## Output M, F
+  
+  SELECT DISTINCT branch_id FROM employee; ### to get all branch_id it will not print duplicates rows. Get different values
+  
+&&&&&&&&&&&&&&&&&&  Functions ***************************************
+
+### Find count of employee
+SELECT COUNT(emp_id) FROM employee; ## will get output as 9, from emp_id column which are set
+
+SELECT COUNT(super_id) FROM employee; ### will get who as super_id set which will 8
+
+### Find number of Female employee born after 1971
+SELECT COUNT(emp_id) FROM employee WHERE sex = 'F' AND birth_day >= '1971-01-01'; ### it will get list of female emp who born after 1971
+
+### Find Average salary of employee's
+SELECT AVG(salary) from employee; 
+
+### Find Average salary of Male employee's
+SELECT AVG(salary) from employee WHERE sex = 'M';  
+ 
+### Find sum of employee's salary
+SELECT SUM(salary) from employee;
+
+### Find out how many male and female employees
+SELECT COUNT(sex), sex FROM employee GROUP BY sex; ### this M - 6 and F - 3
+
+### Find total sales of each salesman
+SELECT SUM(total_sales), emp_id FROM works_with GROUP BY emp_id;
+
+##### WildCard ######
+# Find any client's who are an LLC
+SELECT * FROM client WHERE client_name LIKE '%LLC';  #### This will pattern for 'LLC' ends, '%' - is used for any number of characters. '_' - is used for one character.
+
+## Find any branch suppliers who are in the label business
+SELECT * FROM branch_supplier WHERE supplier_name LIKE '%Label%';
+
+# Find any employee born in october
+SELECT * FROM employee WHERE birth_day::text LIKE '____-10%'; ### This will return the row which match with '10', we are ignoring year. AND ALSO WE are using "birth_day::text" ::text to convert date to string.
+
+###### UNIONS ########
+##Find a list of employee and branch names
+SELECT first_name FROM employee UNION SELECT branch_name FROM branch; ## This print all data in single column. IMPORTANT POINT - Number of columns and data type should be same for all SELECT operation.
+
+## Find a list  of all clients and branch suppliers names
+SELECT client_name, branch_id FROM client UNION SELECT supplier_name, branch_id FROM branch_supplier;
+
+################## JOINS #################################
+INSERT INTO branch VALUES(4, 'Buffalo', NULL, NULL);
+
+SELECT employee.emp_id, employee.first_name, branch.branch_name FROM employee JOIN branch ON employee.emp_id = branch.mgr_id; ### This is an example inner join
+
+SELECT employee.emp_id, employee.first_name, branch.branch_name FROM employee LEFT JOIN branch ON employee.emp_id = branch.mgr_id; ### This is an example of LEFT join
+
+SELECT employee.emp_id, employee.first_name, branch.branch_name FROM employee RIGHT JOIN branch ON employee.emp_id = branch.mgr_id;  ### Example of RIGHT join
+
+SELECT employee.emp_id, employee.first_name, branch.branch_name FROM employee CROSS JOIN branch ; ### Example of CROSS Join
+
+SELECT employee.emp_id, employee.first_name, branch.branch_name FROM employee NATURAL JOIN branch; #### Example of NATURAL JOIN Best and IMPORTANT*******
+ 
+SELECT employee.emp_id, employee.first_name, branch.branch_name FROM employee FULL JOIN branch ON employee.emp_id = branch.mgr_id; ### FULL Join example
+ 
+######################### NESTED Queries ##############################
+SELECT employee.first_name, employee.last_name 
+FROM employee 
+WHERE employee.emp_id IN (
+	SELECT works_with.emp_id 
+	FROM works_with 
+	WHERE works_with.total_sales > 30000
+);
+
+SELECT client.client_name 
+FROM client
+WHERE client.branch_id = (
+	SELECT branch.branch_id
+	FROM branch
+	WHERE branch.mgr_id = 102
+	LIMIT 1
+);
+
+############################## ON DELETE ##############################
+DELETE FROM employee WHERE emp_id = 102; ### This will delete empl id from employee table also set branch manager in 'branch' table to NULL and also set super_id to NULL in employee.
+

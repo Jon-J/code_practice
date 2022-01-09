@@ -1,0 +1,71 @@
+Index blotting
+partial index
+materialized views
+views
+CTE common table expresion
+procedures
+functions
+synonyms
+#### pip install --no-binary :all: psycopg2
+
+https://www.youtube.com/watch?v=clrtT_4WBAw&list=LLZWeLe0SOC8p5rhxMUP4iKg&index=48&t=194s ***********
+https://www.jinfonet.com/resources/bi-defined/3-tier-architecture-complete-overview/
+https://www.tutorialcup.com/dbms/architecture-of-database.htm
+https://beginnersbook.com/2015/04/dbms-introduction/
+https://www.studytonight.com/dbms/first-normal-form.php
+
+Architecture:
+	https://www.jinfonet.com/resources/bi-defined/3-tier-architecture-complete-overview/
+	https://www.guru99.com/dbms-architecture.html
+	
+Index:
+	https://medium.com/omarelgabrys-blog/database-indexing-and-transactions-part-9-a24781d429f8
+	https://chartio.com/learn/databases/how-does-indexing-work/
+	https://www.essentialsql.com/what-is-a-database-index/
+	
+	https://www.geeksforgeeks.org/indexing-in-databases-set-1/
+	https://www.javatpoint.com/dbms-sql-index
+	https://www.guru99.com/indexing-in-database.html
+	
+
+add, drop and update column:
+	http://www.postgresqltutorial.com/postgresql-alter-table/
+	http://www.postgresqltutorial.com/postgresql-drop-column/
+	http://www.postgresqltutorial.com/postgresql-add-column/
+	
+VIEWS:
+	http://www.postgresqltutorial.com/managing-postgresql-views/
+	https://www.datacamp.com/community/tutorials/materialized-views-postgresql
+	https://www.java67.com/2012/11/what-is-difference-between-view-vs-materialized-view-database-sql.html
+	
+Table and Foregin key:
+	http://www.postgresqltutorial.com/postgresql-foreign-key/
+	http://www.postgresqltutorial.com/postgresql-create-table/
+	
+Architecture:
+	https://www.studytonight.com/dbms/architecture-of-database.php
+	https://www.guru99.com/dbms-architecture.html
+	https://www.studytonight.com/dbms/architecture-of-database.php
+	https://www.geeksforgeeks.org/dbms-architecture-2-level-3-level/
+	
+Keys:
+	https://www.studytonight.com/dbms/database-key.php
+	https://dba.stackexchange.com/questions/171133/difference-between-candidate-key-primary-key
+	https://www.geeksforgeeks.org/types-of-keys-in-relational-model-candidate-super-primary-alternate-and-foreign/
+	https://www.guru99.com/dbms-keys.html
+	https://stackoverflow.com/questions/36773011/what-is-the-difference-between-a-primary-key-and-a-surrogate-key/36773462
+	http://www.agiledata.org/essays/keys.html
+	
+Normalization:
+	https://www.studytonight.com/dbms/database-normalization.php
+	
+Indexing:
+	https://www.guru99.com/indexing-in-database.html
+	https://www.geeksforgeeks.org/indexing-in-databases-set-1/
+	http://www.eazynotes.com/pages/database-management-system/indexing.html
+	
+SQL basics:
+	https://www.studytonight.com/dbms/introduction-to-sql.php
+	
+INSERT, SELECT:
+	https://vnegrisolo.github.io/postgresql/generate-fake-data-using-sql

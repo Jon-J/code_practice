@@ -7,3 +7,19 @@ https://nerdjfpb.medium.com/15-django-project-ideas-beginner-to-expert-with-free
 
 https://medium.com/free-code-camp/how-to-build-an-e-commerce-shop-with-python-django-wagtail-3dd2043f89e7
 https://itsourcecode.com/free-projects/python-projects/e-commerce-website-using-django-with-source-code/
+
+django usernmae
+sid/sid@28121986
+
+Django Archi:
+	https://djangobook.com/mdj2-django-structure/  *****************
+	https://medium.com/shecodeafrica/understanding-the-mvc-pattern-in-django-edda05b9f43f
+	https://towardsdatascience.com/working-structure-of-django-mtv-architecture-a741c8c64082
+	https://medium.com/@timmykko/a-quick-glance-of-django-for-beginners-688bc6630fab
+
+Middlewares:
+	https://simpleisbetterthancomplex.com/tutorial/2016/07/18/how-to-create-a-custom-django-middleware.html
+
+Migration, MakeMigrate:
+	https://docs.djangoproject.com/en/2.2/topics/migrations/
+	https://simpleisbetterthancomplex.com/tutorial/2017/09/26/how-to-create-django-data-migrations.html

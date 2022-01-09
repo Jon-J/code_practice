@@ -1,0 +1,29 @@
+wget.exe -i input.txt
+
+Beginner tutorial links:
+https://simpleisbetterthancomplex.com/series/2017/09/11/a-complete-beginners-guide-to-django-part-2.html
+
+https://teamtreehouse.com/library/django-basics/say-hello-to-django/django
+
+https://www.quora.com/What-is-the-best-Django-tutorial 
+https://tutorial.djangogirls.org/en/django_models/
+http://django-marcador.keimlink.de/en/preparation.html
+
+https://code.tutsplus.com/articles/python-from-scratch-create-a-dynamic-website--net-22787
+
+https://realpython.com/django-setup/
+
+REST:
+
+https://codeburst.io/building-an-api-with-django-rest-framework-and-class-based-views-75b369b30396
+
+https://simpleisbetterthancomplex.com/tutorial/2018/02/03/how-to-use-restful-apis-with-django.html
+
+https://tests4geeks.com/django-rest-framework-tutorial/
+
+http://www.django-rest-framework.org/tutorial/quickstart/
+
+https://www.extremetech.com/computing/198427-how-to-install-windows-10-in-a-virtual-machine
+
+youtube-dl.exe -i -c -f best --yes-playlist https://www.youtube.com/playlist?list=PLawkBQ15NDEkDJ5IyLIJUTZ1rRM9YQq6N
+youtube-dl.exe -c -i -f best --yes-playlist https://www.youtube.com/playlist?list=PL700757A5D4B3F368

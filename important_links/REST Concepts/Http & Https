@@ -7,3 +7,31 @@ https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differe
 Http URL redirection:
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections
 https://stackoverflow.com/questions/1562367/how-do-short-urls-services-work
+
+1) HTTP flow:
+	https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html
+	https://www.geeksforgeeks.org/tcp-3-way-handshake-process/
+	https://www.inetdaemon.com/tutorials/internet/tcp/3-way_handshake.shtml
+	http://www.tcpipguide.com/free/t_TCPConnectionEstablishmentProcessTheThreeWayHandsh-3.htm
+
+2) cache:
+	https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
+	https://tech.ebayinc.com/engineering/caching-http-post-requests-and-responses/
+	https://devcenter.heroku.com/articles/increasing-application-performance-with-http-cache-headers
+	https://medium.com/pixelpoint/best-practices-for-cache-control-settings-for-your-website-ff262b38c5a2
+	https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
+	https://docs.apigee.com/api-platform/cache/http-response-caching
+
+
+3) cookies:
+	https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+
+4) How https works:
+	https://howhttps.works/
+	https://love2dev.com/blog/how-https-works/
+
+5) what happens when you type in a URL in browser:
+	https://github.com/alex/what-happens-when
+	https://wsvincent.com/what-happens-when-url/
+	https://stackoverflow.com/questions/2092527/what-happens-when-you-type-in-a-url-in-browser
+	https://dev.to/antonfrattaroli/what-happens-when-you-type-googlecom-into-a-browser-and-press-enter-39g8  --- More detailed
