@@ -2,3 +2,20 @@ https://www.redhat.com/en/topics/microservices
 https://medium.com/@madhukaudantha/microservice-architecture-and-design-patterns-for-microservices-e0e5013fd58a
 https://microservices.io/patterns/microservices.html
 https://nivedv.medium.com/container-internals-deep-dive-5cc424957413
+https://medium.com/nerd-for-tech/design-patterns-for-microservices-circuit-breaker-pattern-ba402a45aac2
+
+https://www.youtube.com/watch?v=o36vWQCRrp0 ----- for interview prep
+
+https://blog.dreamfactory.com/understanding-5-essential-technologies-for-microservices-app-development/
+https://www.edureka.co/blog/microservices-tools
+
+https://www.youtube.com/watch?v=BnknNTN8icw
+
+Tools:
+1. hystrix microservices
+2. Docker
+3. eureka microservice
+4. Elixir
+5. Spring Boot
+6. API Fortress
+7. Apache Kafka
